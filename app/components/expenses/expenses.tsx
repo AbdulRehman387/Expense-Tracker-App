@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { expenseType } from '@/app/componentTypes/componentTypes'
 
 const Expenses = (props: any) => {
-    
+
     const [entryForm, setEntryForm] = useState<boolean>(false)
     const [expense, setExpense] = useState<expenseType>({
         date: "",
@@ -84,7 +84,7 @@ const Expenses = (props: any) => {
                             (expenseArr.map((item, i) => {
                                 if (i !== 0) {
                                     return (
-                                        <tr>
+                                        <tr key={i}>
                                             <td className="px-6 mobile:px-2 py-4 whitespace-nowrap text-sm text-gray-500">{i}</td>
                                             <td className="px-6 mobile:px-2 py-4 whitespace-nowrap text-sm text-gray-500">{item.date}</td>
                                             <td className="px-6 mobile:px-2 py-4 whitespace-nowrap text-sm text-gray-500">{item.category}</td>
